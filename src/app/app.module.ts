@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { IsGrantedDirective } from './_directives/is-granted.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IsGrantedDirective
   ],
   imports: [
     BrowserModule,
