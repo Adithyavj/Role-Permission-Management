@@ -3,5 +3,6 @@ export enum PermissionType {
     READ = 'READ',
     UPDATE = 'UPDATE',
     DELETE = 'DELETE',
-    OTHER = 'OTHER'
+    OTHER = 'OTHER',
+    ORDER = 'ORDER'
 }
