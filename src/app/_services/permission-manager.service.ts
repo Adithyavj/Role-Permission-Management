@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { PermissionBase } from '../_classes/PermissionBase';
 import { PermissionsFactory } from '../_classes/PermissionsFactory';
 import { PermissionType } from '../_models/permissionType';
+import { Resource } from '../_models/resource';
 import { Role } from '../_models/role';
 
 @Injectable({
@@ -13,11 +14,14 @@ export class PermissionManagerService {
   constructor() { }
 
   // receives a permission type as parameter, iterates the user’s permissions and returns true if found.
-  isGranted(permission: PermissionType) {
-    const permissions = PermissionsFactory.getInstance().permissions;
-    for (let perm of permissions) {
-      if (perm === permission) {
-        return true;
+  isGranted(resource: Resource, permission: PermissionType) {
+    for (const res of this.permissions.permissions) {
+      if (resource === res.resource) {
+        for (const perm of res.permissions) {
+          if (perm === permission) {
+            return true;
+          }
+        }
       }
     }
     return false;
