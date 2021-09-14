@@ -20,6 +20,7 @@ export class UserPermission extends PermissionBase {
                 PermissionType.ORDER
             ])
         ];
+
     }
 
 }

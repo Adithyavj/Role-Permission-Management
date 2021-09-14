@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgbNav } from '@ng-bootstrap/ng-bootstrap';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgbNav
+    TabsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,10 +11,13 @@ import { Role } from '../_models/role';
 export class PermissionManagerService {
   private permissions: PermissionBase;
 
-  constructor() { }
+  constructor() {
+    this.permissions = PermissionsFactory.getInstance();
+   }
 
   // receives a permission type as parameter, iterates the user’s permissions and returns true if found.
   isGranted(resource: Resource, permission: PermissionType) {
+    
     for (const res of this.permissions.permissions) {
       if (resource === res.resource) {
         for (const perm of res.permissions) {
